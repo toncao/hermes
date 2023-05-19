@@ -24,7 +24,7 @@ class scrap():
         if self.export:
             file_name = 'vnexpress_' + datetime.datetime.now().isoformat(timespec = 'hours') + '.json'
             with open(file_name, 'w') as f:
-                json.dump(news, f, indent = 4)
+                json.dump(news, f, indent = 4, ensure_ascii = False)
 
         return news
 
@@ -38,7 +38,7 @@ class scrap():
         if self.export:
              file_name = 'tuoitre_' + datetime.datetime.now().isoformat(timespec = 'hours') + '.json'
              with open(file_name, 'w') as f:
-                 json.dump(news, f, indent = 4)
+                 json.dump(news, f, indent = 4, ensure_ascii = False)
 
         return news
 
@@ -52,7 +52,7 @@ class scrap():
         if self.export:
              file_name = 'thanhnien_' + datetime.datetime.now().isoformat(timespec = 'hours') + '.json'
              with open(file_name, 'w') as f:
-                 json.dump(news, f, indent = 4)
+                 json.dump(news, f, indent = 4, ensure_ascii = False)
 
         return news
 
@@ -66,6 +66,6 @@ class scrap():
         if self.export:
              file_name = 'dantri_' + datetime.datetime.now().isoformat(timespec = 'hours') + '.json'
              with open(file_name, 'w') as f:
-                 json.dump(news, f, indent = 4)
+                 json.dump(news, f, indent = 4, ensure_ascii = False)
 
         return news
