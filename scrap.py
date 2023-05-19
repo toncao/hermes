@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 class scrap():
 
-    def __init__(self, count = 5):
+    def __init__(self, count = 20):
         self.count = count
 
     def vnexpress(self):
@@ -12,4 +12,12 @@ class scrap():
         news =[{'title': content.a['title'],
                 'description': content.a.string,
                 'link': content.a['href']} for content in soup[:min(self.count,len(soup))]]
+        return news
+
+    def tuoitre(self):
+        url = 'https://tuoitre.vn/'
+        soup = BeautifulSoup(requests.get(url).content, 'html5lib').find_all('a', attrs = {'class': 'box-category-link-title'})
+        news =[{'title': content['title'],
+                'description': None,
+                'link': url + content['href']} for content in soup[:min(self.count,len(soup))]]
         return news
